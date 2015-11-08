@@ -1,0 +1,4 @@
+#要安装 .deb 套件包时
+sudo dpkg -i package_file.deb
+#要反安装 .deb 套件包时
+sudo dpkg -r package_name

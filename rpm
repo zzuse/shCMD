@@ -1,0 +1,5 @@
+rpm -qil libpcap-devel
+rpm -qil libpcap
+rpm -i libpcap-devel-1.0.0-6.20091201git117cb5.el6.x86_64.rpm
+看rpm包内容:
+rpm -q -filesbypkg -p kernel-debuginfo-common-x86_64-2.6.32-358.el6.x86_64.rpm

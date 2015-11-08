@@ -1,0 +1,2 @@
+#无限制core文件
+ulimit -S -c unlimited > /dev/null 2>&1

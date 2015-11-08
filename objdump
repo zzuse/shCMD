@@ -1,0 +1,1 @@
+objdump  -a -x -t -d myNew | tee 2

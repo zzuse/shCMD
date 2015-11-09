@@ -1,0 +1,9 @@
+#setenv ACE_ROOT /local/zz/ACE_wrappers
+#setenv TAO_ROOT $ACE_ROOT/TAO
+#setenv LD_LIBRARY_PATH $ACE_ROOT/ace:$ACE_ROOT/lib:/local/zz/autorun_v3/src/lib:$LD_LIBRARY_PATH 
+#setenv LD_LIBRARY_PATH /local/zz/ng/ldap_ngSDM/mozilla_ldap_sdk/lib:/local/zz/ng/ldap_ngSDM/lib:$LD_LIBRARY_PATH 
+setenv LD_LIBRARY_PATH ../lib:/home/zz/code/csdm/daf/obj/lib:/home/zz/code/csdm/3rd/openldap-2.4.37/lib:$LD_LIBRARY_PATH               
+#setenv PATH $ACE_ROOT/bin:$PATH
+#setenv PATH /local/zz/autorun_v3/src/bin:$PATH
+#setenv PATH /home/zz/code/csdm/3rd/gsoap-linux-2.4:$PATH
+#setenv XERCESCROOT /local/zz/autorun_v3/xerces-c-src_2_8_0

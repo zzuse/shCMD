@@ -1,0 +1,41 @@
+reboot -h
+adduser ??
+su - ??
+cd /home/??
+apt-get install python-dev
+cd dropbox-python-sdk-1.5.1
+python setup.py install -f
+apt-get install libbluetooth-dev
+python setup.py install -f
+cd example
+python cli_client.py
+cd /home/??/dropbox-python-sdk-1.5.1/example
+cd /home/??
+mkdir dropbox
+cd dropbox
+mkdir code
+su - ??
+chmod 777 /home/??/dropbox/code
+cd /home/??/dropbox-python-sdk-1.5.1/example
+python cli_client.py
+dpkg-reconfigure locales
+cat /proc/swaps
+cat /proc/meminfo
+free -m
+vi swapchange.sh
+ls /etc/fake_memino
+apt-get search langurage
+apt-file search langurage
+apt-cache search langurage
+apt-get install language-pack-en-base
+update-locale
+locale-gen en_US
+exit
+7za
+apt-get install p7zip
+vi /etc/resolv.conf
+ping google.com
+ping 69.30.192.14
+ping 69.30.192.15
+vi resolv.conf
+lynx http://www.tenshu.net/terminator/

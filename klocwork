@@ -1,0 +1,1 @@
+/local/klocwork/user/bin/kwcheck list -F detailed |tee /local/zhangzhen/kloclist.txt

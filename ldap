@@ -1,0 +1,2 @@
+#!/bin/sh
+/opt/sn/csdm/3rd/ldapmodify -c -H ldap://127.0.0.1:30389 -D \"cn=Directory Manager\" -w secret -f $1

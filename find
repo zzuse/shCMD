@@ -9,3 +9,6 @@ mkdir("a",00777);
 
 find . -mtime -4 -a -mtime +3  -print
 find . -type f|xargs wc -l|grep total
+#xargs for mac
+find /Documents/some/dir/ -name "*h" | xargs -J % cp  % /usr/local/include/.
+

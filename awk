@@ -26,3 +26,4 @@ grep -i MODIFYMO tc_dd9999.c | awk -F '/' '{print $3}' | sed -e 's/");//g'
 more shape100.txt  | awk '{print $1}' | sort | uniq -c | sort -rn
 awk -F " " '{for(i=1;i<=NF;++i) {++a[$i]}next}END{for (j=0;j<=40;++j)print a[j]}' shapefactor100.txt
 awk 'NR==FNR {a[NR]=$0;next} NR>FNR&&(a[FNR]==$0) {print NR,FNR,a[FNR],$0,"same"}' Skel50s.txt lambda50.txt
+awk '{i=1;while (i<NF) { {if ($i>=1) printf "1 "; else printf $i" "}; i++} {print '\n'}}' Skel50s.txt > Skel50s.tmp

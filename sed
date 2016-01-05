@@ -19,3 +19,6 @@ sed -i 's/\x01//'  $logfile.tmp
  # print paragraph if it contains AAA or BBB or CCC
  sed -e '/./{H;$!d;}' -e 'x;/AAA/b' -e '/BBB/b' -e '/CCC/b' -e d
  gsed   '/./{H;$!d;};x;/AAA\|BBB\|CCC/b;d'         # GNU sed only
+ 
+ # cut between lines 
+ sed -n '20,26p' format_sample.sql

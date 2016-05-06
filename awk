@@ -18,6 +18,7 @@ grep expr prep_12.27_20150331.sh | awk -F '-e' '{print $2}'|awk -F ' ' '{print $
 cat origin100.txt | awk -F '0' '{print NF-1}' | awk '{s+=$1} END {print s}'
 awk -F ';' '{print NF}'
 awk -F '\n' '{if(length($0)!=295)print $0}' AMSC1.200712283741.FT.cdr
+echo "(Hardware Port: Wi-Fi, Device: en0)" | awk -F  "(, )|(: )|[)]" '{print $2, $4}'
 
 ps -ef|grep Prep|grep -v grep|grep acct|awk '{print $2}'|xargs kill
 awk 'BEGIN{sum=0}{sum=sum+int(substr($0,218,6))}END{print sum}'

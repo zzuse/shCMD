@@ -22,9 +22,12 @@ echo "(Hardware Port: Wi-Fi, Device: en0)" | awk -F  "(, )|(: )|[)]" '{print $2,
 
 ps -ef|grep Prep|grep -v grep|grep acct|awk '{print $2}'|xargs kill
 awk 'BEGIN{sum=0}{sum=sum+int(substr($0,218,6))}END{print sum}'
+awk '{s+=$1} END {print s}' mydatafile # DO NOT USE THIS!!
+awk '{s+=$1} END {printf "%.0f", s}' mydatafile #use this instead
 grep -i MODIFYMO tc_dd9999.c | awk -F '/' '{print $3}' | sed -e 's/");//g'
 
 more shape100.txt  | awk '{print $1}' | sort | uniq -c | sort -rn
 awk -F " " '{for(i=1;i<=NF;++i) {++a[$i]}next}END{for (j=0;j<=40;++j)print a[j]}' shapefactor100.txt
 awk 'NR==FNR {a[NR]=$0;next} NR>FNR&&(a[FNR]==$0) {print NR,FNR,a[FNR],$0,"same"}' Skel50s.txt lambda50.txt
+awk 'NR >= 57890000 && NR <= 57890010' file
 awk '{i=1;while (i<=NF) { {if ($i>=1) printf "1 "; else printf $i" "}; i++} {print '\n'}}' Skel50s.txt > Skel50s.tmp

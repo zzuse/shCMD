@@ -1,0 +1,142 @@
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   main_simple.cpp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git add main_simple.cpp
+$ git status
+
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   main_simple.cpp
+
+$ git diff --cached
+diff --git a/simple.cpp b/simple.cpp
+index b017c8b..87999ef 100644
+--- a/extractCS/main_simple.cpp
++++ b/extractCS/main_simple.cpp
+@@ -69,7 +69,6 @@ int main(int argc, char* argv[])
+-    map<int,POINT >::iterator itera;
+@@ -86,7 +85,7 @@ int main(int argc, char* argv[])
+-    printf("\nThere comes voxel change to white are ...\n");
++    printf("\n Begin Processing ...\n");
+
+$ git commit
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'zzuse')
+
+$ git config --global user.email zzuse@.com
+$ git config --global user.name zzuse
+
+$ git commit
+[master c386ade] change duplicate codes
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+$ git config --global core.editor vim
+$ which vim
+/usr/bin/vim
+
+$ git log
+commit c386adebccec2eafc82997b03b831ab29c7e7cea
+Author: zzuse <zzuse@outlook.com>
+Date:   Wed Sep 10 23:16:21 2014 +0800
+
+    change duplicate codes
+
+commit c27a046b88cd20ddea583f57c10df2455e378b55
+Author: zzuse <zzuse@outlook.com>
+Date:   Sat Sep 6 21:48:44 2014 +0800
+
+    first commit
+
+$ git remote -v
+origin	file:///home/zzuse/Nutstore/git/project.git (fetch)
+origin	file:///home/zzuse/Nutstore/git/project.git (push)
+
+$ git remote
+origin
+
+$ git push origin master
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 391 bytes | 0 bytes/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+To file:///home/zzuse/Nutstore/git/project.git
+
+git clone file:///opt/git/project.git
+git clone file:///i/Nutstore/git/project.git
+git clone file:///home/zhangzhen/src/git/project.git
+git push -u origin dev
+git add .
+
+
+--------------------
+
+
+#if there are remote codes repo:
+$> git init            （注释：初始化git repository）
+$> git config --global core.excludesfile ~/.gitignoreglobal
+$> git add .
+$> git commit -m “first commit”
+or on the internet to create a git repo
+$> git remote add origin https://git.XXX.net/zzuse/ai.git
+$> git pull origin master
+$> git push origin master
+#if there are local codes repo:
+$> mkdir -p ~/Nutstore/git/project.git  （注释：在坚果云中创建bare git repository）
+$> cd ~/Nutstore/git/project.git
+$> git init –bare
+$> cd ~/project   （注释：push代码到坚果云中）
+$> git remote add orig ~/Nutstore/git/project.git
+$> git push orig master
+$> git push orig master
+#你也可以在~/Nutstore/git/project.git 下定期运行GC(垃圾回收），减少文件数目和节约空间，如下：
+$> git gc
+
+
+——————————————-
+git checkout -b dev
+git checkout dev
+git commit
+git push -u origin dev
+git pull origin dev
+git rm helpers.php registry.class.ph
+git mv string.c string_operations.c
+git commit
+git checkout master
+git diff  branch_a..branch_b
+git checkout 094ee15a38bb7d91bc7cabad887aac29910e883b -- testPoreNet.cpp
+
+———————————
+git config --global diff.tool diffmerge
+git config --global difftool.diffmerge.cmd 'diffmerge "$LOCAL" "$REMOTE"'
+git config --global merge.tool diffmerge
+git config --global mergetool.diffmerge.cmd 'diffmerge --merge --result="$MERGED" "$LOCAL" "$(if test -f "$BASE"; then echo "$BASE"; else echo "$LOCAL"; fi)" "$REMOTE"'
+git config --global mergetool.diffmerge.trustExitCode true
+
+git tag -a v1.0 -m "第一个里程碑的突破"
+git push origin —-tags
+git branch -m oldname newname
+

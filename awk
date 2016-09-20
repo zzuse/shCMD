@@ -31,3 +31,5 @@ awk -F " " '{for(i=1;i<=NF;++i) {++a[$i]}next}END{for (j=0;j<=40;++j)print a[j]}
 awk 'NR==FNR {a[NR]=$0;next} NR>FNR&&(a[FNR]==$0) {print NR,FNR,a[FNR],$0,"same"}' Skel50s.txt lambda50.txt
 awk 'NR >= 57890000 && NR <= 57890010' file
 awk '{i=1;while (i<=NF) { {if ($i>=1) printf "1 "; else printf $i" "}; i++} {print '\n'}}' Skel50s.txt > Skel50s.tmp
+awk -F " " '{for(i=1;i<=NF;++i) {s+=$i}next}END{print s}' throatBead300s.tmp
+awk -F ';' '{if(length($13)<15) printf $13;}' *rid

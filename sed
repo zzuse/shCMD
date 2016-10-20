@@ -22,3 +22,7 @@ sed -i 's/\x01//'  $logfile.tmp
  
  # cut between lines 
  sed -n '20,26p' format_sample.sql
+
+ #strip_trailing_whitespace
+ perl -pi -e "s/[ \t]*$//;" $1
+ 
